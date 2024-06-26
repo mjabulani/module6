@@ -16,11 +16,16 @@ public class Main {
         // print all posts
         System.out.println(jsonPlaceholderFetcher.getAllPosts());
 
-        List<Post> posts = new ArrayList<>();
 
+        List<Post> posts = PostMapper.convertJsonToPostList(jsonPlaceholderFetcher.getAllPosts());
+        System.out.println(posts);
 
-        jsonPlaceholderFetcher.getAllPosts();
-        // add new post
+        Post post1 = new Post(1, 23, "dupa", "cycki");
+
+        String postJson = PostMapper.mapPostToJson(post1);
+
+        System.out.println(postJson);
+
 
     }
 }
